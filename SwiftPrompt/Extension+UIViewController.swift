@@ -40,25 +40,34 @@ extension UIViewController {
         }
     }
     
-    func showLoading(msg: String) {
+    public func indicatorWith(title msg: String) {
         let loadingView = UIView(frame: CGRect(origin: .zero, size: .zero))
-        loadingView.backgroundColor = .red
+        loadingView.backgroundColor = .lightGray
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        indicator.startAnimating()
+        indicator.tintColor = .blue
         let label = UILabel(frame: CGRect.zero)
+        loadingView.addSubview(indicator)
         loadingView.addSubview(label)
         view.addSubview(loadingView)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -220),
-            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: +20),
-            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            label.topAnchor.constraint(equalTo: loadingView.topAnchor, constant: -20),
+            loadingView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.bottomAnchor.constraint(equalTo: loadingView.bottomAnchor, constant: -20),
             label.leadingAnchor.constraint(equalTo: loadingView.leadingAnchor, constant: +20),
-            label.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor, constant: -20)
+            label.trailingAnchor.constraint(equalTo: loadingView.trailingAnchor, constant: -20),
+            indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor),
+            indicator.bottomAnchor.constraint(equalTo: label.topAnchor, constant: -10),
+            indicator.topAnchor.constraint(equalTo: loadingView.topAnchor, constant: 10)
             ])
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.text = msg
+        label.textAlignment = .center
         view.bringSubview(toFront: loadingView)
+        loadingView.layer.cornerRadius = 10
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             loadingView.removeFromSuperview()
         }
