@@ -10,6 +10,7 @@
 		446B43F21EB2E96E00864B5E /* SwiftPrompt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446B43E81EB2E96E00864B5E /* SwiftPrompt.framework */; };
 		446B43F71EB2E96E00864B5E /* SwiftPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B43F61EB2E96E00864B5E /* SwiftPromptTests.swift */; };
 		446B43F91EB2E96E00864B5E /* SwiftPrompt.h in Headers */ = {isa = PBXBuildFile; fileRef = 446B43EB1EB2E96E00864B5E /* SwiftPrompt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		446B44031EB2E98D00864B5E /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B44021EB2E98D00864B5E /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		446B43F11EB2E96E00864B5E /* SwiftPromptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPromptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		446B43F61EB2E96E00864B5E /* SwiftPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPromptTests.swift; sourceTree = "<group>"; };
 		446B43F81EB2E96E00864B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		446B44021EB2E98D00864B5E /* Extension+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				446B43EB1EB2E96E00864B5E /* SwiftPrompt.h */,
 				446B43EC1EB2E96E00864B5E /* Info.plist */,
+				446B44021EB2E98D00864B5E /* Extension+UIViewController.swift */,
 			);
 			path = SwiftPrompt;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					446B43E71EB2E96E00864B5E = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					446B43F01EB2E96E00864B5E = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446B44031EB2E98D00864B5E /* Extension+UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		446B43FD1EB2E96E00864B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrgang.SwiftPrompt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +347,7 @@
 		446B43FE1EB2E96E00864B5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +366,7 @@
 		446B44001EB2E96E00864B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftPromptTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrgang.SwiftPromptTests;
@@ -369,6 +378,7 @@
 		446B44011EB2E96E00864B5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftPromptTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrgang.SwiftPromptTests;
